@@ -145,50 +145,44 @@ const displayCategoriesTree = (categoriesTrees) => {
 
 //cart function
 
-const addToCart = (name, price) => {
-  const existingItem = cart.find((item) => item.name === name);
+const addToCart = (productName, productPrice) => {
+  const cartItem = cart.find((product) => product.name === productName);
 
-  if (existingItem) {
-    existingItem.qty += 1;
-    totalPrice += price;
+  if (cartItem) {
+    cartItem.quantity++;
   } else {
-    cart.push({ name, price, qty: 1 });
-    totalPrice += price;
+    cart.push({ name: productName, price: productPrice, quantity: 1 });
   }
 
+  totalPrice += productPrice;
+  updateCartUI();
+};
+
+const removeFromCart = (cartIndex) => {
+  const removedItem = cart[cartIndex];
+  totalPrice -= removedItem.price * removedItem.quantity;
+  cart.splice(cartIndex, 1);
   updateCartUI();
 };
 
 const updateCartUI = () => {
-  const cartList = document.getElementById("cart-list");
-  cartList.innerHTML = "";
+  const cartListElement = document.getElementById("cart-list");
 
-  cart.forEach((item, index) => {
-    const li = document.createElement("li");
-    li.className = "flex justify-between items-center";
-
-    li.innerHTML = `
-      <div>
-        <span>${item.name}</span>
-      </div>
+  cartListElement.innerHTML = cart
+    .map(
+      (product, cartIndex) => `
+    <li class="flex justify-between items-center">
+      <div>${product.name}</div>
       <div class="flex items-center gap-2">
-        <span>৳${item.price} × ${item.qty}</span>
-        <button onclick="removeFromCart(${index})" 
-        class="text-red-500 font-bold">✕</button>
+        <span>৳${product.price} × ${product.quantity}</span>
+        <button onclick="removeFromCart(${cartIndex})" class="text-red-500 font-bold">✕</button>
       </div>
-    `;
-
-    cartList.appendChild(li);
-  });
+    </li>
+  `
+    )
+    .join("");
 
   document.getElementById("cart-total").innerText = totalPrice;
-};
-
-const removeFromCart = (index) => {
-  const item = cart[index];
-  totalPrice -= item.price * item.qty;
-  cart.splice(index, 1);
-  updateCartUI();
 };
 
 //display categories
