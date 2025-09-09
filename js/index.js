@@ -1,3 +1,6 @@
+let cart = [];
+let totalPrice = 0;
+
 const loadCategories = () => {
   fetch("https://openapi.programming-hero.com/api/categories")
     .then((res) => res.json())
@@ -125,9 +128,12 @@ const displayCategoriesTree = (categoriesTrees) => {
   </div>
 
   <!-- Button -->
-  <button class="bg-green-600 text-white w-full py-2 rounded">
-    Add to Cart
-  </button>
+ <button onclick="addToCart('${tree.name}', ${tree.price})" 
+        class="bg-green-600 text-white w-full py-2 rounded">
+  Add to Cart
+</button>
+
+
 </div>
 
 
@@ -135,6 +141,54 @@ const displayCategoriesTree = (categoriesTrees) => {
     categoriesCard.appendChild(categoriePlant);
   });
   manageSpinner(false);
+};
+
+//cart function
+
+const addToCart = (name, price) => {
+  const existingItem = cart.find((item) => item.name === name);
+
+  if (existingItem) {
+    existingItem.qty += 1;
+    totalPrice += price;
+  } else {
+    cart.push({ name, price, qty: 1 });
+    totalPrice += price;
+  }
+
+  updateCartUI();
+};
+
+const updateCartUI = () => {
+  const cartList = document.getElementById("cart-list");
+  cartList.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    const li = document.createElement("li");
+    li.className = "flex justify-between items-center";
+
+    li.innerHTML = `
+      <div>
+        <span>${item.name}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span>৳${item.price} × ${item.qty}</span>
+        <button onclick="removeFromCart(${index})" 
+        class="text-red-500 font-bold">✕</button>
+      </div>
+    `;
+
+    cartList.appendChild(li);
+  });
+
+  document.getElementById("cart-total").innerText = totalPrice;
+};
+
+const removeFromCart = (index) => {
+  const item = cart[index];
+  totalPrice -= item.price * item.qty;
+  cart.splice(index, 1);
+  updateCartUI();
 };
 
 //display categories
