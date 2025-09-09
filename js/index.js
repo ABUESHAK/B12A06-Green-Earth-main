@@ -10,6 +10,19 @@ const loadAllTrees = () => {
     .then((data) => displayCategoriesTree(data.plants));
 };
 
+//spin load function
+const manageSpinner = (status) => {
+  if (status == true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("categories-plants-card").classList.add("hidden");
+  } else {
+    document
+      .getElementById("categories-plants-card")
+      .classList.remove("hidden");
+    document.getElementById("spinner").classList.add("hidden");
+  }
+};
+
 //remove active
 const removeActive = () => {
   const categoriesButtons = document.querySelectorAll(".category-btn");
@@ -63,6 +76,8 @@ const displayTreeDetails = (treeDetails) => {
 
 // display categories wise trees
 const loadCategoriesTree = (id) => {
+  manageSpinner(true);
+
   const url = `https://openapi.programming-hero.com/api/category/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -119,6 +134,7 @@ const displayCategoriesTree = (categoriesTrees) => {
     `;
     categoriesCard.appendChild(categoriePlant);
   });
+  manageSpinner(false);
 };
 
 //display categories
