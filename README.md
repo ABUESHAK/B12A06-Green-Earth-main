@@ -1,167 +1,24 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
-
-### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
-
-### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
-
-### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
-
----
-# Green Earth
-
-
-## Private Repository: https://classroom.github.com/a/nVZrg5R9 
-
-## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
-
-
----
-🌴 API Endpoints
----
-1. Get 🌴All Plants
-```bash
-https://openapi.programming-hero.com/api/plants
-```
-
-2. Get 🌴All categories <br/>
-```bash
-https://openapi.programming-hero.com/api/categories
-```
-
-
-3. Get 🌴plants by categories <br/>
-```bash
-https://openapi.programming-hero.com/api/category/${id}
-```
-
-```bash
-https://openapi.programming-hero.com/api/category/1
-```
-
-4. Get 🌴Plants Detail <br/>
-
-```bash
-https://openapi.programming-hero.com/api/plant/${id}
-```
-
-```bash
-https://openapi.programming-hero.com/api/plant/1
-```
----
-
-
-
-
-## ✅ Main Requirements 
-
-#### 1) Navbar
-
-- Website **logo/name** on the **left**  
-- **Menu items** in the **center** 
-- **Plant a Tree button** on the **right** 
-
-#### 2) Banner 
-- A **background image**  
-- A **title** and **subtitle**  
-- A **centered button**  
-
-#### 3) About Campaign
-- **Section heading**  
-- **Image on the left**, **text on the right**  
-
-#### 4) Our Impact Section 
-- Show **3 cards** with campaign **statistics**  
-
-#### 5) Plant a Tree Today Section & Footer
-- **Form**: Name, Email, Number of Trees  
-- **Footer** with copyright info 
-
-#### 6) Responsiveness 
-- Website must be **mobile responsive**  
-
----
-#### 7) Create a README file to answer the following question-
-
-
 #### 1) What is the difference between var, let, and const?
 
-#### 2) What is the difference between map(), forEach(), and filter()? 
+        var: function-scoped type. Block এর ভিতর থাকলেও বাইরে access করা যায়। declare না করেও access করলে undefined দেখায়।
+        let : Block-scoped → শুধু {} এর ভিতর কাজ করে। আগে access করলে error দেয়। মান পরিবর্তন করা যায়, কিন্তু একই scope এ redeclare করা যায় না।
+        const : Block-scoped এবং value fixed. মান change করা যায় না। Object বা Array হলে ভিতরের content change করা যায়।
+
+#### 2) What is the difference between map(), forEach(), and filter()?
+
+        map(): array-এর element নিয়ে নতুন array বানিয়ে দেয়। মূল array অপরিবর্তিত থাকে।
+        forEach(): forEach () হচ্ছে array একটি object, array-এর সব element এর উপর কাজ করার জন্য ব্যবহার করা হয়। কিন্তু কোনো রেজাল্ট রিটার্ন করেনা।
+
+        filter(): array থেকে শর্ত অনুযায়ী element বাছাই করা এবং রেজাল্ট রিটার্ন করে ।
 
 #### 3) What are arrow functions in ES6?
 
+        Arrow functions হলো JavaScript-এর সংক্ষিপ্ত ফাংশন লেখা পদ্ধতি। anonymous (নাম ছাড়া) হয়, কিন্তু variable-এ assign করা যায়।
+
 #### 4) How does destructuring assignment work in ES6?
+
+        Destructuring দিয়ে আমরা array বা object-এর value সরাসরি variable-এ নিয়ে আসতে পারি। এটি কোড ছোট এবং পরিষ্কার করে।
 
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
 
-## ⚙️ Functionalities 
-
-1) Category Loading 
-Load Tree Categories dynamically on the left side.
-
-2) Category Click → Tree Data 
-On clicking a category: load trees of that category.
-
-Display in a 3-column card layout.
-
-3) Card Contents 
- Each card includes:
-
-        - Image
-
-        -  Name
-
-        - Short description
-
-        - Category
-
-        - Price
-
-        - Add to Cart button
-
-4) Modal on Card Click 
-Clicking a tree name on a card opens a modal with full tree details.
-
-
-##  🧪 Challenges 
-
-
-    1) Add to Cart 
-    Clicking Add to Cart: - Adds the tree to Cart List
-                          - Shows tree name 
-
-    2) Total Calculation 
-    Calculate total price of trees in cart.
-
-    3) Remove from Cart 
-    Clicking ❌ removes tree and deducts price from total.
-
-    4) Loading Spinner
-    Show spinner while data is loading.
-
-    5) Active Button State 
-    Highlight active category button when selected.
-
-
-
-🧰 Technology Stack:
-        
-        HTML
-
-        CSS (Vanilla / Tailwind / DaisyUI)
-
-        JavaScript (Vanilla only, no frameworks)
-
-📌 Rules
-✅ At least 5 meaningful commits
-
-❌ No dummy text or Lorem Ipsum — must use relevant content
-
-
-
-
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
-
----
+        ES6 এ একটি নতুন ফিচার। String তৈরি করার জন্য নতুন syntax। Backticks ` দিয়ে লেখা হয়। এর মাধ্যমে আমরা variable dynamic ভাবে লিখতে পারি ${variable} দিয়ে। Multi-line strings সহজে লিখতে পারি।
