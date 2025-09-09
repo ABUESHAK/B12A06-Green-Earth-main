@@ -92,142 +92,28 @@
         <!-- Heading -->
         <h2 class="text-2xl font-bold text-center mb-6">Choose Your Trees</h2>
 
-        <div class="grid grid-cols-12 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
           <!-- Category Sidebar -->
-          <div class="col-span-2 bg-white p-4 rounded-lg shadow">
+          <div id="categories-sidebar" class="md:col-span-2 p-4 rounded-lg">
             <h3 class="font-semibold mb-4">Categories</h3>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  class="block px-3 py-2 rounded hover:bg-green-100 text-green-700 font-medium bg-green-50"
-                  >All Trees</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Fruit Trees</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Flowering Trees</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Shade Trees</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Medicinal Trees</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Timber Trees</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Evergreen Trees</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Ornamental Plants</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Bamboo</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Climbers</a
-                >
-              </li>
-              <li>
-                <a href="#" class="block px-3 py-2 rounded hover:bg-green-100"
-                  >Aquatic Plants</a
-                >
-              </li>
-            </ul>
+            <!-- <a
+              href="index.html"
+              class="block px-3 py-2 rounded hover:bg-green-100 text-green-700 font-medium bg-green-50"
+              >All Trees</a> -->
+
+            <div id="categories-list"></div>
           </div>
 
           <!-- Tree Cards -->
           <div
-            class="col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            id="categories-plants-card"
+            class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             <!-- Single Card -->
-            <div class="bg-white p-4 rounded-lg shadow">
-              <div class="h-28 bg-gray-200 rounded mb-3"></div>
-              <h4 class="font-semibold">Mango Tree</h4>
-              <p class="text-sm text-gray-600 mb-3">
-                A fast-growing tropical tree that produces juicy mangoes.
-              </p>
-
-              <!-- Price + Tag -->
-              <div class="flex items-center justify-between mb-3">
-                <span class="font-bold">৳500</span>
-                <span
-                  class="inline-block bg-green-100 text-green-600 text-xs px-2 py-1 rounded"
-                  >Fruit Tree</span
-                >
-              </div>
-
-              <!-- Full-width button -->
-              <button class="bg-green-600 text-white w-full py-2 rounded">
-                Add to Cart
-              </button>
-            </div>
-
-            <!-- Copy more cards -->
-            <div class="bg-white p-4 rounded-lg shadow">
-              <div class="h-28 bg-gray-200 rounded mb-3"></div>
-              <h4 class="font-semibold">Guava Tree</h4>
-              <p class="text-sm text-gray-600 mb-3">
-                A fruit tree that produces sweet guavas.
-              </p>
-
-              <div class="flex items-center justify-between mb-3">
-                <span class="font-bold">৳500</span>
-                <span
-                  class="inline-block bg-green-100 text-green-600 text-xs px-2 py-1 rounded"
-                  >Fruit Tree</span
-                >
-              </div>
-
-              <button class="bg-green-600 text-white w-full py-2 rounded">
-                Add to Cart
-              </button>
-            </div>
-
-            <div class="bg-white p-4 rounded-lg shadow">
-              <div class="h-28 bg-gray-200 rounded mb-3"></div>
-              <h4 class="font-semibold">Neem Tree</h4>
-              <p class="text-sm text-gray-600 mb-3">
-                Known for its medicinal benefits and shade.
-              </p>
-
-              <div class="flex items-center justify-between mb-3">
-                <span class="font-bold">৳500</span>
-                <span
-                  class="inline-block bg-green-100 text-green-600 text-xs px-2 py-1 rounded"
-                  >Medicinal Tree</span
-                >
-              </div>
-
-              <button class="bg-green-600 text-white w-full py-2 rounded">
-                Add to Cart
-              </button>
-            </div>
           </div>
 
           <!-- Cart Sidebar -->
-          <div class="col-span-2 bg-white p-4 rounded-lg shadow">
+          <div class="md:col-span-2 bg-white p-4 rounded-lg shadow">
             <h3 class="font-semibold mb-4">Your Cart</h3>
             <ul class="space-y-2">
               <li class="flex justify-between">
@@ -359,5 +245,7 @@
     <footer class="bg-[#14532D] text-center py-10 text-white">
       <p>© 2025 Green Earth. All Rights Reserved.</p>
     </footer>
+
+    <script src="js/index.js"></script>
   </body>
 </html>
